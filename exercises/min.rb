@@ -2,7 +2,7 @@
 # Input: a list of numbers
 # Returns: the SMALLEST number in the list
 # Prints: Nothing
-#
+
 # In English, the "min" method takes as input a list of numbers and
 # returns the SMALLEST number in that list.
 
@@ -13,14 +13,14 @@
 # This is going to be very similar to max, so don't be afraid if
 # these two methods look almost identical
 def min(list)
-  ____ = ____
-  ____.each do |____|
-    if ____
-      ____ = ____
+  min_so_far = list.first   # or, equivalently, list[0]
+  list.each do |item|       # or, equivalently, for item in list
+    if item < min_so_far    # if current item is less than min so far
+      min_so_far = item
     end
   end
 
-  return ____
+  return min_so_far
 end
 
 if __FILE__ == $0
