@@ -12,10 +12,19 @@
 #   str.length == 4
 
 def longest_string(list)
-  # This is your job. :)
+		longest_so_far = list.first 	#look at the first element of the list. use that as the longest string.
+		list.each do | string |				#move through the array. make the next element a placeholder.
+			if string.length > longest_so_far.length #if this new placeholder value is longer than the longest_so_far length
+				longest_so_far = string               	#then the NEW longest string is that placeholder. REPEAT.
+		end
+	end
+	return longest_so_far
 end
 
+#how do you know how many ends you need?
+
 if __FILE__ == $0
-  # I'd advise putting some sanity checks here.
-  # How else will you be sure your code does what you think it does?
+	p longest_string(["a","zzzz","c"]) == "zzzz"
+	p longest_string(["cat","dog","c"]) == "cat"
+	p longest_string(["bomb","diggity","diggity"]) == "diggity"
 end
