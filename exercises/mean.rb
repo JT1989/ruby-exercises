@@ -6,7 +6,7 @@
 # See: https://www.freemathhelp.com/arithmetic-mean.html
 #
 # For example,
-#   The mean of 5 and 2 is 2.5 since (5 + 2)/2 is 2.5
+#   The mean of 5 and 2 is 2.5 since (5 + 2)/2 is 3.5
 #   The mean of 5 and 5 is 5.0 since (5 + 5)/2 is 5.0
 #   The mean of 10, 20, and 30 is 20.0 since (10 + 20 + 30)/3 is 20.0
 #   etc.
@@ -22,11 +22,15 @@
 require_relative './sum'
 
 def mean(list)
-  total = sum(list) # This is the "sum" method from our sum.rb file
-  # result = ____   # Given we have the sum of the list, how can we calculate the average?
+	sum(list)/list.length #sum of the list/length of list
 end
 
 if __FILE__ == $0
+	p mean([5,2]) == 3.5 #why is this coming up false?
+	p mean([5,5]) == 5
+	p mean([10,20,30]) == 20
+	p mean([100,100,100,100.1]) == 100.025
+	p mean([-100, 100]) == 0.0
   # I'd advise putting some sanity checks here.
   # How else will you be sure your code does what you think it does?
 end
