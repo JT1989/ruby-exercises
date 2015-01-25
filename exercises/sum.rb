@@ -20,8 +20,17 @@
 #   total = total + 70   # the value of "total" is now 102
 
 def sum(list)
-  # This is your job. :)
+	sum = 0            #declare sum = 0
+	if list.empty?     #if list contains no elements
+		sum              #then the sume is 0
+	else
+		list.each do |x| #take each item in the array and set it equal to x
+		sum = sum + x  	 #add x to the current sum
+	 end
+	end
+	sum                #print the sum
 end
+
 
 if __FILE__ == $0
   p sum([1]) == 1
@@ -31,7 +40,9 @@ if __FILE__ == $0
   p sum([0, 10, 0, 20]) == 30
   p sum([-111, -111, -111]) == -333
   p sum([11,22,33]) == 66
+  p sum([]) == 0
 end
+
 
 # Remember: these are rumble strips, not a driving instructor.
 # If any are "false" then something is broken, but just because they're
