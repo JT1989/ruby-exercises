@@ -15,13 +15,26 @@
 # See: http://www.ruby-doc.org/core-2.1.2/Array.html#method-i-count
 
 def count_in_list(list, item_to_count)
+	running_total_of_number = 0 #the running total is 0
+	list.each do |item|					#go through the list. example, the first element of 1 is the placeholder.
+	if item == item_to_count    #if this #1 is equal to 1
+	running_total_of_number += 1 #then the the running total increases by 1
+	# do it with the second number. the .each acts like a coda.
+end
   # You'll need three things:
   #  1. A running total of the number of times you've seen the item
   #  2. A way to loop/iterate through the list
   #  3. A way to add to the running total as you see the item
+
+end
+	return  running_total_of_number #return the # of times item_to_count has appeared
 end
 
 if __FILE__ == $0
+	p count_in_list([1,2,3], 1)  == 1
+	p count_in_list([1,2,3], -1) == 0
+	p count_in_list([1,1,1], 1)  == 3
+	p count_in_list([" "], 5)  == 0
   # I'd advise putting some sanity checks here.
   # How else will you be sure your code does what you think it does?
 end
