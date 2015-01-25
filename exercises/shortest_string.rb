@@ -4,19 +4,16 @@
 # Prints:      Nothing
 
 # For example, shortest_string(["a", "zzzz", "cd"]) should return "a" since
-def shortest_string(list)
-	shortest_string_so_far = list.first
-	list.each do |item|
-		if shortest_string_so_far.length < item.length
-			then shortest_string_so_far == item
+def shortest_string(list)							#define the method
+	shortest_string_so_far = list.first #look at the entire list, make the first element equal to the shortest string
+	list.each do |string|									#go through each item in the list, place it in the |placeholder| area
+		if string.length < shortest_string_so_far.length #if the length of the placeholder < the shortest string so far.
+			then shortest_string_so_far = string#then the new shortest item is the item
 		end
+	end
+	return shortest_string_so_far
 end
-return shortest_string_so_far
-end
-	#look at the entire list, make the first element equal to the shortest string
-	#look at the second one and see if it's < the shortest string so far.
-	# if it is the shortest one, then thats the new shortest string.
-  # This is your job. :)
+ # This is your job. :)
 
 if __FILE__ == $0
 
