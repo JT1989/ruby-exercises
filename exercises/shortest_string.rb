@@ -24,6 +24,7 @@ if __FILE__ == $0
 	p shortest_string(["apple", "kitchen", "shadows"]) == "apple"
 	p shortest_string(["dog", "mice", "cats"]) == "dog"
 	p shortest_string(["bomb","diggity","diggity"]) == "bomb"
+	p shortest_string(["SF","LAX","NYC"]) == "SF"
   # I'd advise putting some sanity checks here.
   # How else will you be sure your code does what you think it does?
 end
