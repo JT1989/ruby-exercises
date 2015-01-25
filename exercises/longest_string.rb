@@ -18,10 +18,8 @@ def longest_string(list)
 				longest_so_far = string               	#then the NEW longest string is that placeholder. REPEAT.
 		end
 	end
-	return longest_so_far
+	return longest_so_far													#return the longest string so far.
 end
-
-#how do you know how many ends you need?
 
 if __FILE__ == $0
 	p longest_string(["a","zzzz","c"]) == "zzzz"
