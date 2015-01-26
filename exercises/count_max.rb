@@ -15,9 +15,8 @@
 require_relative './max'
 require_relative './count_in_list'
 
-def count_max(list)
-	maximum_so_far = max(list) 										#take the list and look for the highest number.
-	result = count_in_list(list, maximum_so_far)	#count how many times this highest number shows in the list
+def count_max(list)								#take the list and look for the highest number.
+	count_in_list(list, max(list))	#count how many times this highest number shows in the list
 end
   #pro-tip: understand signature
   #You can write this using nothing more than the max and count_in_list
