@@ -7,14 +7,13 @@
 # that sequence of spaces in a sentence designates the start of a new word.
 # That means we don't care about how many spaces are between two words, only
 # that there is at least one.
+# Hint: You'll want to use String#split
+# See: http://www.ruby-doc.org/core-2.1.2/String.html#method-i-split
 
 def word_count(string) #string is the argument to the method, word_count
-  entire_string = string.split #Split the string into  words to take out the spaces and makes up one array
-  return entire_string.count   # count the words in this array
-
-  #count the # of words in the string
-  # Hint: You'll want to use String#split
-  # See: http://www.ruby-doc.org/core-2.1.2/String.html#method-i-split
+  return string.split.count #Split the string into  words to take out the spaces and makes up one array
+                            #count the # of words in the string
+                            #name.method1.method2.method3
 end
 
 
