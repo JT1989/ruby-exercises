@@ -14,7 +14,7 @@
 # Conceptually, it prints out a row of "count" *'s.  Run it yourself to
 # see how it works.  Experiment with different inputs.
 def print_line(count)
-  (1..count).each do |i|
+  (1..count).each do |star_count|
     print "*"         # This prints a single "*"
   end
 
@@ -22,7 +22,9 @@ def print_line(count)
 end
 
 def print_triangle(height)
-  # You have to fill in the details here.
+  (1..height).each do |i|
+  print_line(i)
+  end
 end
 
 # There are no rumble strips this time.  It's up to you to decide whether
@@ -41,5 +43,11 @@ if __FILE__ == $0
 
   print "\n\n\n" # This is here just to make the separation between triangles clearer
 
+  print_triangle(4)
+
+  print "\n\n\n" # This is here just to make the separation between triangles clearer
+
   print_triangle(10)
+
+  print "\n\n\n"
 end
