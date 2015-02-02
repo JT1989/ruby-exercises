@@ -27,11 +27,11 @@ def hot_or_cold(num_to_guess)
     guess = get_user_guess()   # "guess" is now an integer
 
     if guess < num_to_guess    # The guess is too cold
-      ____
+      puts "cold"
     elsif guess > num_to_guess # The guess is too hot
-      ____
+      puts "too hot"
     else                       # The guess is juuuust right
-      ____
+      puts "Congratulations, your guess is juuust right!"
 
       # This "return" will make the program return from hot_or_cold, even from
       # inside the while loop.
@@ -47,7 +47,8 @@ if __FILE__ == $0
 
   puts "Welcome to Hot or Cold!"
   puts "We've picked a number between 0 and 999. Can you guess it?"
-  hot_or_cold(rand(1000))
+  hot_or_cold(rand(1000)) # the `rand` function chooses a number at random
+  hot_or_cold(500) # the correct answer is 500
 end
 
 # What is "gets.chomp.to_i"? First, gets, chomp, and to_i are methods.  We could
