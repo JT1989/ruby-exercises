@@ -22,7 +22,7 @@
 require_relative './sum'
 
 def mean(list)
-	sum(list)/list.length #sum of the list/length of list
+	sum(list)/list.length.to_f #sum of the list/length of list
 end
 
 if __FILE__ == $0
@@ -34,3 +34,5 @@ if __FILE__ == $0
   # I'd advise putting some sanity checks here.
   # How else will you be sure your code does what you think it does?
 end
+
+  p mean([5,2])
