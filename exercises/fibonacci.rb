@@ -10,12 +10,6 @@
 #
 # If you can't see the pattern, you start with the numbers 0 and 1. From there,
 # every subsequent number is the sum of the previous two numbers. That is,
-#
-# 0 + 1 = 1
-# 1 + 1 = 2
-# 1 + 2 = 3
-# 2 + 3 = 5
-# 3 + 5 = 8
 # etc...
 
 # You can use this site to find very, very large Fibonacci numbers:
@@ -28,6 +22,13 @@
 # inputs.  Don't worry if it can't.
 
 def fib(n)
+  if n == 0
+    return 0
+  elsif n == 1
+    return 1
+  else
+    return fib(n-2) + fib(n-1)
+  end
 end
 
 if __FILE__ == $0
@@ -35,19 +36,20 @@ if __FILE__ == $0
 
   # These are the two "base cases", so if anything is wrong here,
   # everything computed from these numbers will almost certainly be wrong.
-  p fib(0) == 0
-  p fib(1) == 1
+  p fib(0) == 0 #base case, we start with nothing
+  p fib(1) == 1 #base case, we start with nothing
 
   # This is the first "computed" number, so if something is wrong with our
   # computation there's a good chance it will show up here.
   p fib(2) == 1
-
+  p fib(3) == 2
+  p fib(4) == 3
   # The 5th Fibonacci number is 5 and is the only one with this property, so
   # it serves as a good sanity check.
   p fib(5) == 5
 
   # This serves as a good input for the "common case"
-  p fib(123) == 22698374052006863956975682
+  #p fib(123) == 22698374052006863956975682
 
   # Want to see if your fibonacci method can handle big inputs?
   # Uncomment this:
@@ -58,3 +60,11 @@ if __FILE__ == $0
   # This might grind your computer to a halt. If that happens, press CTRL+c.
   # That's "control" and "c" at the same time.
 end
+
+# [0] 0
+# [1] 1
+# [2] 0 + 1 = 1  | fib(0) + fib (1)  | fib(2-2) + fib(2-1)  | fib(n-2) + fib(n-1)
+# [3] 1 + 1 = 2  | fib(1) + fib (2)  | fib(3-2) + fib(3-1)
+# [4] 1 + 2 = 3  | fib(2) + fib (3)  | fib(4-2) + fib(4-1)
+# [5] 2 + 3 = 5  | fib(3) + fib (4)  | fib(5-2) + fib(5-1)
+# [6] 3 + 5 = 8  | fib(4) + fib (5)  | fib(6-2) + fib(6-1)
