@@ -23,7 +23,7 @@ end
 
 def print_triangle(height)
   (1..height).each do |i|
-  print_line(i)
+    print_line(i)
   end
 end
 
