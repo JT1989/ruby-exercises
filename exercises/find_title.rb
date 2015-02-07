@@ -3,7 +3,9 @@
 # Returns:     The contents of the <title>...</title> tag at that URL
 # Prints:      Nothing
 
+require 'rubygems'
 require 'open-uri'
+require 'nokogiri'
 
 # Note #1
 # open-uri allows us to download the contents of any URL using the "open" method
@@ -21,6 +23,10 @@ def find_title(url)
   #   2. Use one of the methods described below to extract the
   #      contents of the title tag.
   #   3. Return the contents of the title tag.
+  page = Nokogiri::HTML(open(url))
+  links = page.css("title")
+
+  return links.text
 end
 
 if __FILE__ == $0
@@ -31,6 +37,7 @@ if __FILE__ == $0
   p find_title("https://www.facebook.com") == "Welcome to Facebook - Log In, Sign Up or Learn More"
 end
 
+  p find_title("https://www.google.com")
 # Note #2
 # Once you have the HTML, there are a few ways to extract the contents
 # of the title tag.

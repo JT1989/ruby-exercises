@@ -15,6 +15,21 @@
 # pig_latin("happy") == "appyhay"
 
 def pig_latin(word)
+  vowels = ["a", "e", "i", "o", "u"]
+  consonants = [ "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "x", "z", "w", "y"]
+  downcased_word = word.downcase
+
+  if vowels.include?(downcased_word[0])
+    downcased_word + "ay"
+
+  #for sequence of two consonants
+  elsif consonants.include?(downcased_word[1] || downcased_word[0])
+  downcased_word[2..-1] + downcased_word[0..1] + "ay"
+
+  else consonants.include?(downcased_word[0])
+  downcased_word[1..-1] + downcased_word[0] + "ay"
+
+  end
 end
 
 if __FILE__ == $0
