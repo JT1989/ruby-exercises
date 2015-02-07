@@ -2,7 +2,7 @@
 # Inputs:      A website URL
 # Returns:     An array of all link URLs on the input website
 # Prints:      Nothing
-
+require 'rubygems'
 require 'open-uri'
 require 'nokogiri'
 
@@ -25,8 +25,18 @@ require 'nokogiri'
 
 def find_links(url)
   # This should return an array of all links at the given URL
+  array = []
+  page = Nokogiri::HTML(open(url))
+  links = page.css("a")
+
+  puts "Done! #{links.length} link(s) were found!" # shows number of links
+  links.each{|link| puts link['href'] }
+
+puts links.class
+
 end
 
-find_links("http://www.cnn.com/").each do |url|
-  puts url
-end
+p find_links("http://www.example.com/")
+p find_links("http://codeunion.io//")
+
+
