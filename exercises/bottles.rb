@@ -27,22 +27,25 @@
 #   etc.
 
 def bottles(start_number)
-  start_number.downto(1) do |i|
-    while
-      if i > 1
-        puts "#{i} of beers on the wall, #{i} bottles of beer."
-        puts "Take one down, pass it around, #{i} bottles of beer on the wall!"
-      elsif i == 1
-        puts "#{i} of beer on the wall, #{i} bottle of beer."
-      end
+  start_number.downto(1) do |num|
+    if num == 1
+      bottle = "bottle"
+      bottles = "bottles"
+      next_num = "no more"
+    else
+      bottle = "bottles"
+      bottles = "bottles"
+      next_num = num - 1
     end
+
+    puts "#{num} #{bottle} of beer on the wall, #{num} #{bottle} of beer."
+    puts "Take one down, pass it around, #{next_num} #{bottles} of beer on the wall."
   end
-  puts "Take one down, pass it around, no more bottles of beer on the wall!"
 end
 
 if __FILE__ == $0
   # What *should* this print?
-  bottles(98)
+  bottles(5)
   bottles(2)
 end
 
