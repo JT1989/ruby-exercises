@@ -21,23 +21,47 @@
 #  array == [1,2,3,"waffles"]
 
 def pad_array(array, min_size, pad_with)
+  if min_size == 0 || array.length
+    return array
+
+  elsif min_size < array.length
+    return array
+
+  elsif min_size > array.length
+    difference = min_size - array.length
+
+    difference.times do
+    result = array.push(pad_with)
+
+    end
+  end
+  return result
 end
 
 if __FILE__ == $0
   # Here are some sanity checks written in "plain English".
   # See if you can translate them into Ruby. Your checks should look like
-  #
+
   #   p pad_array(input) == ...expected return value...
 
   # If min_size is 0
   #  then pad_array should always return the input array
+  p pad_array([1,2,3], 0, "waffles") == [1,2,3]
 
   # If min_size is less than the size of the input array
   #  then pad_array should always return the input array
+  p pad_array([1,2,3], 1, "waffles") == [1,2,3]
+  p pad_array([1,2,3], 2, "waffles") == [1,2,3]
 
   # If min_size equals the size of the input array
   #   then pad_array should always return the input array
+  p pad_array([1,2,3], 3, "waffles") == [1,2,3]
 
   # If min_size is 1 greater than the size of the input array
   #  then pad_array should add a single item to the end of the input array
+  p pad_array([1,2,3], 4, "waffles") == [1,2,3,"waffles"]
+  p pad_array([1,2,3], 5, "waffles") == [1,2,3,"waffles","waffles"]
 end
+
+
+
