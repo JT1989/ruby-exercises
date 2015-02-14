@@ -42,14 +42,29 @@
 
 
 def run_length_encode(string)
+  chars = string.chars #= separated WWWWWWAAAAAAWWWWWWAAAAAABBBBBB
+  cached = chars.shift #= W
+  count = 1            #= 1
+
+  encoded = []
+
+  chars.each do |char|  #= if char = W
+    if char == cached   #= if W = W, if next character is the same as cached
+      count = count + 1 #= count = 2, increment count
+    else
+    encoded << "#{count}#{cached}"  #= or, if it's different
+    cached = char                   #= cached = W, save the character
+    count = 1                       #= count = 1, count to encoded character
+
+    end
+   end
+  encoded << "#{count}#{cached}" #["6W", "6A", "6W", "6A", "6B"]
+  encoded.join                   #"6W6A6W6A6B"
 end
 
 # If you want to iterate over each character in a string, look at String#each_char
 # http://ruby-doc.org/core-2.1.0/String.html#method-i-each_char
 #
-# string.each_char do |c|
-#   puts "Character is #{c}"
-# end
 
 if __FILE__ == $0
   p run_length_encode("WWWWWWAAAAAAWWWWWWAAAAAABBBBBB") == "6W6A6W6A6B"
